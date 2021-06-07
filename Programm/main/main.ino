@@ -1,3 +1,7 @@
+#include <Pixy2.h>        //Librarys
+#include <Servo.h>
+#include <Adafruit_NeoPixel.h>
+#include "header.h"
 void setup() {
   // put your setup code here, to run once:
 
