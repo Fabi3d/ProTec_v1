@@ -1,4 +1,5 @@
 #include "motors.h"
+//here are all methods for the motors to drive
 #define M1FWD  30
 #define M1BWD 29
 #define M2FWD 27
