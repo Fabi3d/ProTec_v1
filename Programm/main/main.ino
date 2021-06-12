@@ -1,11 +1,14 @@
 #include "motors.h"
 #include "SensorReadout.h"
+#include "globals.h"
+
 
 int or_LDR;     //deklare the variables for the light resistors
 int ir_LDR;
 int middle_LDR;
 int il_LDR;
 int ol_LDR;
+
 void setup() {
   // put your setup code here, to run once:
 pinMode(40, OUTPUT);
