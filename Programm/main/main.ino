@@ -19,9 +19,13 @@ void loop() {
   // put your main code here, to run repeatedly:
   readout();                //command to read out the light resistors
   digitalWrite(40, HIGH);
-  straight(100);
-  delay(10000);
+  straight(150);
+  delay(2000);
+  turn_right(150, 150);
   digitalWrite(40, LOW);
+  delay(2000);
+  turn_left(150, 150);
+  delay(2000);
   stop_motors();
   delay(10000);
 }
