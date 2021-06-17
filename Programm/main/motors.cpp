@@ -6,6 +6,9 @@
 #define M2BWD 28
 #define EN_M1 9
 #define EN_M2 8
+
+int v1 = 143;
+int v2 = 110;
 void straight(int m_Speed)
 {
   digitalWrite(M1FWD, HIGH);

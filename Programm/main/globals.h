@@ -7,4 +7,13 @@ extern int middle_LDR;
 extern int il_LDR;
 extern int ol_LDR;
 
+extern int v1;
+extern int v2;
+
+extern int or_treshold;
+extern int ir_treshold;
+extern int m_treshold;
+extern int il_treshold;
+extern int ol_treshold;
+
 #endif
