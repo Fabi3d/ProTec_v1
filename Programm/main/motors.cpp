@@ -49,3 +49,12 @@ void turn_right(int m_Speed_right, int m_Speed_left){
   analogWrite(EN_M2, m_Speed_left);
   delay(1);
 }
+void back(int m_Speed){
+  digitalWrite(M1FWD, LOW);
+  digitalWrite(M1BWD, HIGH);
+  digitalWrite(M2FWD, LOW);
+  digitalWrite(M2BWD, HIGH);
+  analogWrite(EN_M1, m_Speed+20);
+  analogWrite(EN_M2, m_Speed);
+  delay(1);
+}
