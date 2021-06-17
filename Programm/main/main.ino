@@ -25,10 +25,13 @@ for(int i = 0; i < 6; i++)
   pixels.setPixelColor(i, pixels.Color(0, 0, 250));
   pixels.show();
 pinMode(40, OUTPUT);
-Serial.begin(9600);       //starting a serial communication
+Serial.begin(9600);    //starting a serial communication
+
+
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  //show_data();
   follow_line();
 }
