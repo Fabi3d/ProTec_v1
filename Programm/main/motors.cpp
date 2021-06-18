@@ -15,7 +15,7 @@ void straight(int m_Speed)
   digitalWrite(M1BWD, LOW);
   digitalWrite(M2FWD, HIGH);
   digitalWrite(M2BWD, LOW);
-  analogWrite(EN_M1, m_Speed+20);
+  analogWrite(EN_M1, m_Speed+10);
   analogWrite(EN_M2, m_Speed);
   delay(1);
 }

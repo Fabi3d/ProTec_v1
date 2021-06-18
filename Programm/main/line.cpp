@@ -74,20 +74,21 @@ void follow_line(){
     }
   }
   readout();
-
-  if(ol_LDR > ol_treshold && il_LDR > il_LDR && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold){
+  
+  if((ol_LDR > ol_treshold) && (il_LDR > il_treshold) && (middle_LDR > m_treshold) && (ir_LDR > ir_treshold) && (or_LDR > or_treshold)){
+    Serial.println("start millis");
     unsigned long nowtime = millis();
-    while(ol_LDR > ol_treshold && il_LDR > il_LDR && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold){
+    while((ol_LDR > ol_treshold && il_LDR > il_treshold && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold)&&millis() - nowtime <= 1500){
       readout();
       straight(v1);
-      if(millis() - nowtime > 1500){
-         while(ol_LDR > ol_treshold && il_LDR > il_LDR && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold){
+      
+    }
+    while(ol_LDR > ol_treshold && il_LDR > il_treshold && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold){
           back(v1);
           readout();
           delay(10);
-         }
       }
     }
-  }
+  
   }
   
