@@ -2,5 +2,6 @@
 #define LINE_H_
 
 void follow_line();
+void green();
 
 #endif
