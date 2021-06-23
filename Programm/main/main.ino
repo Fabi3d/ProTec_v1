@@ -32,19 +32,19 @@ pixy.init();
       // using the color connected components program
       pixy.changeProg("color_connected_components");
       pixy.setLamp(1, 1);         //activate the led´s
-      delay(10);    
+      delay(10);     
 pixyServo.write(85);
 delay(100);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
- // show_data();
+  // put your main code here, to run repeatedly: 
+  //show_data();
   follow_line();
   green();
 }
-
+ 
 void green(){
      static int i = 0;
   int j;
@@ -63,41 +63,48 @@ if (pixy.ccc.numBlocks)
     Serial.print(panOffset);
     Serial.print("       ");
     Serial.println(tiltOffset);
-    if (panOffset < 0 && tiltOffset > 40)
+    if (panOffset < 0 && tiltOffset > 35)
     {
       Serial.println("right");
       straight(v1);
       delay(10);
       back(v1);
-      delay(20);
+      delay(40);
       stop_motors();
       delay(200);
       readout();
+
         if(or_LDR < or_treshold && ir_LDR < ir_treshold){
           straight(v1);
           delay(800);
           readout();
           goto greenend;
         }
+         if (pixy.ccc.numBlocks == 2){
+           if (tiltOffset > 0 && tiltOffset2 > 0)
+              {
+                goto deadend;
+              }
+         }
         straight(v1);
         delay(700);
-        turn_right(v1+32, v1+10);
+        turn_right(v1+10, v1+10);
         delay(850);
         readout();
         while(middle_LDR > m_treshold && il_LDR > il_treshold && ol_LDR > ol_treshold){
           readout();
-          turn_right(v1+20, v1+10);
+          turn_right(v1+10, v1+10);
         }
         straight(v1);
         delay(300);
     }
-else if (panOffset > 0 && tiltOffset > 40)
+else if (panOffset > 0 && tiltOffset > 35)
     {
       Serial.println("left");
       straight(v1);
       delay(10);
       back(v1);
-      delay(20);
+      delay(40);
       stop_motors();
       delay(200);
       readout();
@@ -107,9 +114,15 @@ else if (panOffset > 0 && tiltOffset > 40)
           readout();
           goto greenend;
         }
+        if (pixy.ccc.numBlocks == 2){
+           if (tiltOffset > 0 && tiltOffset2 > 0)
+              {
+                goto deadend;
+              }
+         }
         straight(v1);
         delay(600);
-        turn_left(v1, v1+35);
+        turn_left(v1+20, v1+10);
         delay(850);
         readout();
         while(middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold){
@@ -119,11 +132,14 @@ else if (panOffset > 0 && tiltOffset > 40)
         straight(v1);
         delay(300);
     }
+    deadend:
      if (pixy.ccc.numBlocks == 2)
     {
       if (tiltOffset > 0 && tiltOffset2 > 0)
       {
-        straight(v1);;
+        digitalWrite(led, HIGH);
+        pixyServo.write(0);
+        straight(v1);
         delay(200);
         readout();
         if (or_LDR < or_treshold && ol_LDR < ol_treshold)
@@ -132,14 +148,16 @@ else if (panOffset > 0 && tiltOffset > 40)
           delay(800);
           return;
         }
-        turn_right(v1, v1);
-        delay(800);
+        turn_right(v1+100, v1+100);
+        delay(600);
         readout();
         while (middle_LDR > m_treshold)
         {
-         turn_right(v1, v1);
+         turn_right(v1+100, v1+100);
           readout();
+          digitalWrite(led, LOW);
         }
+        pixyServo.write(85);
       }
       else
       {
@@ -150,3 +168,4 @@ else if (panOffset > 0 && tiltOffset > 40)
   greenend:
   delay(1);
   }
+  

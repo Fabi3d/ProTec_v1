@@ -5,11 +5,14 @@
 #include <Arduino.h>
 #include <Pixy2.h>
 
-int or_treshold = 750;
-int ir_treshold = 750;
+int or_treshold = 700;
+int ir_treshold = 700;
 int m_treshold = 700;
-int il_treshold = 750;
-int ol_treshold = 750;
+int il_treshold = 700;
+int ol_treshold = 700;
+
+int sw520 = 47;
+int led = 40;
 
 void follow_line(){
 
@@ -37,6 +40,7 @@ void follow_line(){
   }
 
   if((ol_LDR < ol_treshold && il_LDR > il_treshold && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold) || (ol_LDR < ol_treshold && il_LDR < il_treshold && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold)){     //(11000) or (10000)
+    green();
     while(middle_LDR > m_treshold){
       turn_left(v1+35, v2+15);
       readout();
@@ -45,6 +49,7 @@ void follow_line(){
   readout();
   
  if((ol_LDR > ol_treshold && il_LDR > il_treshold && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR < or_treshold) || (ol_LDR > ol_treshold && il_LDR > il_treshold && middle_LDR > m_treshold && ir_LDR < ir_treshold && or_LDR < or_treshold)){    //(00011) or (00001)
+    green();
     while(middle_LDR > m_treshold){
       turn_right(v2+22, v1+5);
       readout();
@@ -91,7 +96,8 @@ void follow_line(){
       }
   
     }
+    
   //green();
   }
-  
+ 
   

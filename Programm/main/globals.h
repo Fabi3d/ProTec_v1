@@ -16,4 +16,7 @@ extern int m_treshold;
 extern int il_treshold;
 extern int ol_treshold;
 
+extern int led;
+extern int sw520;
+
 #endif
