@@ -19,6 +19,7 @@ int ol_LDR;
 Servo pixyServo;
 
 
+
 void setup() {
   // put your setup code he re, to run once:
   pixels.begin();
