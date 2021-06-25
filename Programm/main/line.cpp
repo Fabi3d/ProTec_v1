@@ -7,7 +7,7 @@
 
 int or_treshold = 750;
 int ir_treshold = 750;
-int m_treshold = 700;
+int m_treshold = 750;
 int il_treshold = 750;
 int ol_treshold = 750;
 

@@ -5,7 +5,7 @@
 #include <Servo.h>
 #include <Pixy2.h>   
 #include <Adafruit_NeoPixel.h>
-
+//hi du depp
 #define PIN 44
 Adafruit_NeoPixel pixels(6, PIN, NEO_GRB + NEO_KHZ800);
 Pixy2 pixy;
