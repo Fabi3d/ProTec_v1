@@ -5,12 +5,12 @@
 #include <Servo.h>
 #include <Pixy2.h>   
 #include <Adafruit_NeoPixel.h>
-
+//hi du depp
 #define PIN 44
 Adafruit_NeoPixel pixels(6, PIN, NEO_GRB + NEO_KHZ800);
 Pixy2 pixy;
 
-int or_LDR;     //deklare the variables for the light resistors  
+int or_LDR;     //declare the variables for the light resistors  
 int ir_LDR;
 int middle_LDR;
 int il_LDR;
@@ -18,10 +18,10 @@ int ol_LDR;
 
 Servo pixyServo;
 
-//hi
+
 
 void setup() {
-  // put your setup code he re, to run once:
+  // put your setup code here, to run once:
   pixels.begin();
   pixyServo.attach(7);
 for(int i = 0; i < 6; i++)   
