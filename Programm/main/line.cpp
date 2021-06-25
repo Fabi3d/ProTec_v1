@@ -25,18 +25,18 @@ void follow_line(){
   
   if((ir_LDR < ir_treshold && or_LDR > or_treshold && il_LDR > il_treshold && ol_LDR > ol_treshold) || (or_LDR > or_treshold && ir_LDR < ir_treshold && il_LDR > il_treshold && ol_LDR > ol_treshold && middle_LDR < m_treshold)){    //if statement for a little correction to the right (00?10) or (00110)
     readout();
-    //while(middle_LDR > m_treshold){
+    while(middle_LDR > m_treshold){
       turn_right(v2+22, v1+5);
       readout();  
-    //}
+    }
   }
   
   if((il_LDR < il_treshold && or_LDR > or_treshold && ir_LDR > ir_treshold && ol_LDR > ol_treshold) || (or_LDR > or_treshold && ir_LDR > ir_treshold && il_LDR < ol_treshold && ol_LDR > ol_treshold && middle_LDR < m_treshold)){      //if statement for a little correction to the left (01?00) or (01100)
     readout();
-  //  while(middle_LDR > m_treshold){
+    while(middle_LDR > m_treshold){
       turn_left(v1+35, v2+15);
       readout();
-    //}
+    }
   }
 
   if((ol_LDR < ol_treshold && il_LDR > il_treshold && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold) || (ol_LDR < ol_treshold && il_LDR < il_treshold && middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold)){     //(11000) or (10000)
