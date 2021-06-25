@@ -88,7 +88,7 @@ if (pixy.ccc.numBlocks)
               }
          }
         straight(v1);
-        delay(500);
+        delay(400);
         turn_right(v1+10, v1+10);
         delay(750);
         readout();
@@ -122,7 +122,7 @@ else if (panOffset > 0 && tiltOffset > 35)
               }
          }
         straight(v1);
-        delay(500);
+        delay(400);
         turn_left(v1+20, v1+10);
         delay(750);
         readout();
