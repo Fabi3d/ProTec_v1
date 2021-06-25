@@ -58,8 +58,8 @@ if (pixy.ccc.numBlocks)
     panOffset = (int32_t)pixy.frameWidth/2 - (int32_t)pixy.ccc.blocks[0].m_x;
     tiltOffset = (int32_t)pixy.ccc.blocks[0].m_y - (int32_t)pixy.frameHeight/2; 
     pixy.ccc.getBlocks();
-    int   panOffset2 = (int32_t)pixy.frameWidth / 2 - (int32_t)pixy.ccc.blocks[1].m_x;
-    int    tiltOffset2 = (int32_t)pixy.ccc.blocks[1].m_y - (int32_t)pixy.frameHeight / 2;
+    int panOffset2 = (int32_t)pixy.frameWidth / 2 - (int32_t)pixy.ccc.blocks[1].m_x;
+    int tiltOffset2 = (int32_t)pixy.ccc.blocks[1].m_y - (int32_t)pixy.frameHeight / 2;
 
     Serial.print(panOffset);
     Serial.print("       ");
