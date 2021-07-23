@@ -90,7 +90,7 @@ if (pixy.ccc.numBlocks)
         straight(v1);
         delay(400);
         turn_right(v1+10, v1+10);
-        delay(750);
+        delay(550);
         readout();
         while(middle_LDR > m_treshold && il_LDR > il_treshold && ol_LDR > ol_treshold){
           readout();
@@ -124,7 +124,7 @@ else if (panOffset > 0 && tiltOffset > 35)
         straight(v1);
         delay(400);
         turn_left(v1+20, v1+10);
-        delay(750);
+        delay(550);
         readout();
         while(middle_LDR > m_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold){
           readout();
