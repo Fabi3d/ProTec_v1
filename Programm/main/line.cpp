@@ -5,11 +5,11 @@
 #include <Arduino.h>
 #include <Pixy2.h>
 
-int or_treshold = 550;
-int ir_treshold = 550;
+int or_treshold = 600;
+int ir_treshold = 600;
 int m_treshold = 650;
-int il_treshold = 550;
-int ol_treshold = 550;
+int il_treshold = 600;
+int ol_treshold = 600;
 
 int sw520 = 47;
 int led = 40;
@@ -18,7 +18,7 @@ void follow_line(){
 
   readout();
  if((middle_LDR < m_treshold) && ((ol_LDR > ol_treshold && il_LDR > il_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold) || (ol_LDR > ol_treshold && or_LDR > or_treshold))) {      //if statement for all straight cases
-    straight(v1);
+    straight(v1-10);
     Serial.println("straight");
   }
   readout(); 

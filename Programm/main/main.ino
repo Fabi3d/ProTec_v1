@@ -34,7 +34,7 @@ pixy.init();
       pixy.changeProg("color_connected_components");
       pixy.setLamp(1, 1);         //activate the led´s
       delay(10);     
-pixyServo.write(90);
+pixyServo.write(87);
 delay(100);
 
 }
@@ -64,13 +64,13 @@ if (pixy.ccc.numBlocks)
     Serial.print(panOffset);
     Serial.print("       ");
     Serial.println(tiltOffset);
-    if (panOffset < 0 && tiltOffset > 35)
+    if (panOffset < 0 && tiltOffset > 30)
     {
       Serial.println("right");
       straight(v1);
       delay(10);
       back(v1);
-      delay(40);
+      delay(100);
       stop_motors();
       delay(200);
       readout();
@@ -99,13 +99,13 @@ if (pixy.ccc.numBlocks)
         straight(v1);
         delay(300);
     }
-else if (panOffset > 0 && tiltOffset > 35)
+else if (panOffset > 0 && tiltOffset > 30)
     {
       Serial.println("left");
       straight(v1);
       delay(10);
       back(v1);
-      delay(40);
+      delay(100);
       stop_motors();
       delay(200);
       readout();
@@ -136,7 +136,7 @@ else if (panOffset > 0 && tiltOffset > 35)
     deadend:
      if (pixy.ccc.numBlocks == 2)
     {
-      if (tiltOffset > 0 && tiltOffset2 > 0)
+      if ((tiltOffset > 0 && tiltOffset2 > 0)&& (panOffset > 5 && panOffset2 > 5))
       {
         digitalWrite(led, HIGH);
         pixyServo.write(0);
