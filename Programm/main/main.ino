@@ -97,7 +97,7 @@ if (pixy.ccc.numBlocks)
           turn_right(v1+10, v1+10);
         }
         straight(v1);
-        delay(300);
+        delay(70);
     }
 else if (panOffset > 0 && tiltOffset > 30)
     {
@@ -131,15 +131,15 @@ else if (panOffset > 0 && tiltOffset > 30)
           turn_left(v1, v1+35);
         }
         straight(v1);
-        delay(300);
+        delay(70);
     }
     deadend:
      if (pixy.ccc.numBlocks == 2)
     {
-      if ((tiltOffset > 0 && tiltOffset2 > 0)&& (panOffset > 5 && panOffset2 > 5))
-      {
+     // if ((tiltOffset > 0 && tiltOffset2 > 0) && (panOffset > 5 && panOffset2 > 5))
+      //{
         digitalWrite(led, HIGH);
-        pixyServo.write(0);
+       // pixyServo.write(0);
         straight(v1);
         delay(200);
         readout();
@@ -150,7 +150,7 @@ else if (panOffset > 0 && tiltOffset > 30)
           return;
         }
         turn_right(v1+100, v1+100);
-        delay(600);
+        delay(800);
         readout();
         while (middle_LDR > m_treshold)
         {
@@ -158,15 +158,16 @@ else if (panOffset > 0 && tiltOffset > 30)
           readout();
           digitalWrite(led, LOW);
         }
-        pixyServo.write(85);
-      }
-      else
-      {
-        return;
-      }
+      //  pixyServo.write(85);
+     // }
+      //else
+     // {
+        //return;
+     // }
     }
   }
   greenend:
+  digitalWrite(led, LOW);
   delay(1);
   }
   

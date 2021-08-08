@@ -5,11 +5,11 @@
 #include <Arduino.h>
 #include <Pixy2.h>
 
-int or_treshold = 600;
-int ir_treshold = 600;
-int m_treshold = 650;
-int il_treshold = 600;
-int ol_treshold = 600;
+int or_treshold = 630;
+int ir_treshold = 630;
+int m_treshold = 680;
+int il_treshold = 630;
+int ol_treshold = 630;
 
 int sw520 = 47;
 int led = 40;
