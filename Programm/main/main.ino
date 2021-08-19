@@ -77,7 +77,7 @@ if (pixy.ccc.numBlocks)
 
         if(or_LDR < or_treshold && ir_LDR < ir_treshold){
           straight(v1);
-          delay(800);
+          delay(600);
           readout();
           goto greenend;
         }
@@ -111,7 +111,7 @@ else if (panOffset > 0 && tiltOffset > 30)
       readout();
         if(ol_LDR < ol_treshold && il_LDR < il_treshold){
           straight(v1);
-          delay(800);
+          delay(600);
           readout();
           goto greenend;
         }
@@ -146,7 +146,7 @@ else if (panOffset > 0 && tiltOffset > 30)
         if (or_LDR < or_treshold && ol_LDR < ol_treshold)
         {
           straight(v1);
-          delay(800);
+          delay(600);
           return;
         }
         turn_right(v1+100, v1+100);
