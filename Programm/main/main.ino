@@ -15,6 +15,8 @@ int ir_LDR;
 int middle_LDR;
 int il_LDR;
 int ol_LDR;
+int gyro;
+long counter;
 
 Servo pixyServo;
 

@@ -6,6 +6,9 @@ extern int ir_LDR;
 extern int middle_LDR;
 extern int il_LDR;
 extern int ol_LDR;
+extern int gyro;
+
+extern long counter;
 
 extern int v1;
 extern int v2;

@@ -7,6 +7,7 @@ void readout(){             //method to read out the sensors
   middle_LDR = analogRead(A2);
   il_LDR = analogRead(A3);
   ol_LDR = analogRead(A4);
+  gyro = digitalRead(47);
 }
 
 void show_data(){
@@ -19,7 +20,9 @@ void show_data(){
   Serial.print("    ");
   Serial.print(analogRead(A1));
   Serial.print("    ");
-  Serial.println(analogRead(A0));
+  Serial.print(analogRead(A0));
+  Serial.print("    ");
+  Serial.println(digitalRead(47));
   delay(500);
   }
 }
