@@ -116,6 +116,4 @@ void follow_line() {
   if (gyro == 1) {
     counter = 0;
   }
-
-  //green();
 }
