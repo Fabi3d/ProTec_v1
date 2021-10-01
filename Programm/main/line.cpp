@@ -5,11 +5,11 @@
 #include <Arduino.h>
 #include <Pixy2.h>
 
-int or_treshold = 660;
-int ir_treshold = 660;
-int m_treshold = 650;
-int il_treshold = 660;
-int ol_treshold = 630;
+int or_treshold = 680;
+int ir_treshold = 680;
+int m_treshold = 670;
+int il_treshold = 680;
+int ol_treshold = 650;
 
 int sw520 = 47;
 int led = 40;
@@ -101,15 +101,15 @@ void follow_line() {
 
   if (gyro == 0) {        //Rampe
     counter++;
-    if (counter > 150) {
+    if (counter > 100) {
       if (middle_LDR < m_treshold) {
         straight(245);
       }
       if (ir_LDR < ir_treshold) {
-        turn_right(0, 245);
+        turn_right(100, 245);
       }
       if (il_LDR < il_treshold) {
-        turn_left(245, 0);
+        turn_left(245, 100);
       }
     }
   }

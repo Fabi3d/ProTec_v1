@@ -1,0 +1,6 @@
+{
+    "port": "/dev/cu.usbserial-110",
+    "configuration": "cpu=atmega2560",
+    "board": "arduino:avr:mega",
+    "sketch": "main.ino"
+}

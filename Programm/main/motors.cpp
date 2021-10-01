@@ -15,12 +15,12 @@ void straight(int m_Speed)
   digitalWrite(M1BWD, LOW);
   digitalWrite(M2FWD, HIGH);
   digitalWrite(M2BWD, LOW);
-  analogWrite(EN_M1, m_Speed+10);
-  analogWrite(EN_M2, m_Speed+10);
+  analogWrite(EN_M1, m_Speed + 10);
+  analogWrite(EN_M2, m_Speed + 10);
   delay(1);
 }
 
-void stop_motors(){
+void stop_motors() {
   digitalWrite(M1FWD, LOW);
   digitalWrite(M1BWD, LOW);
   digitalWrite(M2FWD, LOW);
@@ -30,7 +30,7 @@ void stop_motors(){
   delay(1);
 }
 
-void turn_left(int m_Speed_right, int m_Speed_left){
+void turn_left(int m_Speed_right, int m_Speed_left) {
   digitalWrite(M1FWD, HIGH);
   digitalWrite(M1BWD, LOW);
   digitalWrite(M2FWD, LOW);
@@ -40,7 +40,7 @@ void turn_left(int m_Speed_right, int m_Speed_left){
   delay(1);
 }
 
-void turn_right(int m_Speed_right, int m_Speed_left){
+void turn_right(int m_Speed_right, int m_Speed_left) {
   digitalWrite(M1FWD, LOW);
   digitalWrite(M1BWD, HIGH);
   digitalWrite(M2FWD, HIGH);
@@ -49,12 +49,12 @@ void turn_right(int m_Speed_right, int m_Speed_left){
   analogWrite(EN_M2, m_Speed_left);
   delay(1);
 }
-void back(int m_Speed){
+void back(int m_Speed) {
   digitalWrite(M1FWD, LOW);
   digitalWrite(M1BWD, HIGH);
   digitalWrite(M2FWD, LOW);
   digitalWrite(M2BWD, HIGH);
-  analogWrite(EN_M1, m_Speed+5);
+  analogWrite(EN_M1, m_Speed + 5);
   analogWrite(EN_M2, m_Speed);
   delay(1);
 }
