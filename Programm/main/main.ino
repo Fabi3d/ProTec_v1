@@ -26,8 +26,10 @@ void setup() {
   // put your setup code here, to run once:
   pixels.begin();
   pixyServo.attach(7);
+  
   for (int i = 0; i < 6; i++)
     pixels.setPixelColor(i, pixels.Color(0, 50, 250));
+    
   pixels.show();
   pinMode(40, OUTPUT);
   Serial.begin(9600);    //starting a serial communication
