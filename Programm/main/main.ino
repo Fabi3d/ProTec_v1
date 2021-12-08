@@ -38,14 +38,14 @@ void setup() {
   pixy.changeProg("color_connected_components");
   pixy.setLamp(1, 1);         //activate the led´s
   delay(10);
-  pixyServo.write(85);
+  pixyServo.write(100);
   delay(100);
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  //show_data();
+  show_data();
   follow_line();
   green();
 }
