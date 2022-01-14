@@ -38,7 +38,7 @@ void setup() {
   pixy.changeProg("color_connected_components");
   pixy.setLamp(1, 1);         //activate the led´s
   delay(10);
-  pixyServo.write(100);
+  pixyServo.write(97);
   delay(100);
 
 }
