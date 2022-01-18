@@ -8,6 +8,13 @@ extern int il_LDR;
 extern int ol_LDR;
 extern int gyro;
 
+extern long duration;
+extern int distance;
+
+extern int trigger;
+extern int echo;
+
+
 extern long counter;
 
 extern int v1;
@@ -21,5 +28,7 @@ extern int ol_treshold;
 
 extern int led;
 extern int sw520;
+
+extern int loop_counter;
 
 #endif

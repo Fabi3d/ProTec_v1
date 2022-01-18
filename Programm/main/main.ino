@@ -16,20 +16,26 @@ int middle_LDR;
 int il_LDR;
 int ol_LDR;
 int gyro;
+
+int trigger=48;
+int echo=49;
+
+int distance=0;
+long duration=0;
+
 long counter;
 
 Servo pixyServo;
-
-
 
 void setup() {
   // put your setup code here, to run once:
   pixels.begin();
   pixyServo.attach(7);
-  
+  pinMode(trigger, OUTPUT);
+  pinMode(echo, INPUT);
   for (int i = 0; i < 6; i++)
     pixels.setPixelColor(i, pixels.Color(0, 50, 250));
-    
+  
   pixels.show();
   pinMode(40, OUTPUT);
   Serial.begin(9600);    //starting a serial communication
@@ -45,7 +51,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  show_data();
+  //show_data();
   follow_line();
   green();
 }
@@ -137,7 +143,7 @@ void green() {
       straight(v1);
       delay(70);
     }
-deadend:
+ deadend:
     if (pixy.ccc.numBlocks == 2)
     {
       // if ((tiltOffset > 0 && tiltOffset2 > 0) && (panOffset > 5 && panOffset2 > 5))

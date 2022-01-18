@@ -11,12 +11,24 @@ int m_treshold = 670;
 int il_treshold = 680;
 int ol_treshold = 650;
 
+int loop_counter=0;
+
 int sw520 = 47;
 int led = 40;
 
 void follow_line() {
-
+  loop_counter++;
   readout();
+  if(loop_counter>=5){    //This readout is only taken every 5 loops
+    ultrasonic_readout();
+    if(distance<15){
+      stop_motors();
+      while(true){
+        
+      }
+    }
+    loop_counter=0;
+  }
   if ((middle_LDR < m_treshold) && ((ol_LDR > ol_treshold && il_LDR > il_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold) || (ol_LDR > ol_treshold && or_LDR > or_treshold))) {     //if statement for all straight cases
     straight(v1 - 10);
     Serial.println("straight");

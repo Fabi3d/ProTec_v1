@@ -22,7 +22,22 @@ void show_data() {
     Serial.print("    ");
     Serial.print(analogRead(A0));
     Serial.print("    ");
-    Serial.println(digitalRead(47));
-    delay(500);
+    Serial.print(digitalRead(47));
+    Serial.println("    Distance:");
+    
   }
+}
+
+void ultrasonic_readout(){
+  digitalWrite(trigger, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trigger, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigger, LOW);
+  duration = pulseIn(echo, HIGH);
+  //Serial.print(duration);
+  //Serial.print("      distance 1: ");
+  distance = ((duration*pow(10, -6)/2)*343.2)*pow(10, 2);
+  Serial.println(distance);
+    
 }
