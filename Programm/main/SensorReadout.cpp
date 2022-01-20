@@ -23,7 +23,7 @@ void show_data() {
     Serial.print(analogRead(A0));
     Serial.print("    ");
     Serial.print(digitalRead(47));
-    Serial.println("    Distance:");
+    Serial.println("    ");
     
   }
 }
@@ -38,6 +38,11 @@ void ultrasonic_readout(){
   //Serial.print(duration);
   //Serial.print("      distance 1: ");
   distance = ((duration*pow(10, -6)/2)*343.2)*pow(10, 2);
-  Serial.println(distance);
+ // Serial.println(distance);
     
+}
+
+void ir_readout(){
+  ir_val_left=analogRead(A7);
+  ir_val_right=analogRead(A8);
 }

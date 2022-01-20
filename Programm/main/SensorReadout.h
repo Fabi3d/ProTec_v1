@@ -3,4 +3,5 @@
 void readout();
 void show_data();
 void ultrasonic_readout();
+void ir_readout();
 #endif

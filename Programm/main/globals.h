@@ -29,6 +29,9 @@ extern int ol_treshold;
 extern int led;
 extern int sw520;
 
+extern float ir_val_right;
+extern float ir_val_left;
+
 extern int loop_counter;
 
 #endif

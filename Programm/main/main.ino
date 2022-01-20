@@ -23,6 +23,9 @@ int echo=49;
 int distance=0;
 long duration=0;
 
+float ir_val_right=0;
+float ir_val_left=0;
+
 long counter;
 
 Servo pixyServo;
@@ -51,6 +54,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  ir_readout();
   //show_data();
   follow_line();
   green();
@@ -70,7 +74,7 @@ void green() {
     pixy.ccc.getBlocks();
     int panOffset2 = (int32_t)pixy.frameWidth / 2 - (int32_t)pixy.ccc.blocks[1].m_x;
     int tiltOffset2 = (int32_t)pixy.ccc.blocks[1].m_y - (int32_t)pixy.frameHeight / 2;
-
+ 
     Serial.print(panOffset);
     Serial.print("       ");
     Serial.println(tiltOffset);
