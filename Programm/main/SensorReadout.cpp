@@ -45,4 +45,5 @@ void ultrasonic_readout(){
 void ir_readout(){
   ir_val_left=analogRead(A7);
   ir_val_right=analogRead(A8);
+ // Serial.println(ir_val_right);
 }

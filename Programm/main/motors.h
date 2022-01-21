@@ -7,5 +7,6 @@ void stop_motors();
 void turn_left(int m_Speed_right, int m_Speed_left);
 void turn_right(int m_Speed_right, int m_Speed_left);
 void back(int m_Speed);
+void ausweichen();
 
 #endif

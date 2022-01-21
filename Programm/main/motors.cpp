@@ -58,3 +58,12 @@ void back(int m_Speed) {
   analogWrite(EN_M2, m_Speed);
   delay(1);
 }
+void ausweichen(){
+  digitalWrite(M1FWD, HIGH);
+  digitalWrite(M1BWD, LOW);
+  digitalWrite(M2FWD, HIGH);
+  digitalWrite(M2BWD, LOW);
+  analogWrite(EN_M1, 80);
+  analogWrite(EN_M2, v1);
+  delay(1);
+}

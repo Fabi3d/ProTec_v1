@@ -5,13 +5,13 @@
 #include <Arduino.h>
 #include <Pixy2.h>
 
-int or_treshold = 680;
-int ir_treshold = 680;
-int m_treshold = 670;
-int il_treshold = 680;
-int ol_treshold = 650;
+int or_treshold = 680;  //680
+int ir_treshold = 680;  //680
+int m_treshold = 670;   //670
+int il_treshold = 680;  //680
+int ol_treshold = 650;  //650
 
-int loop_counter=0;
+int loop_counter = 0;
 
 int sw520 = 47;
 int led = 40;
@@ -19,16 +19,42 @@ int led = 40;
 void follow_line() {
   loop_counter++;
   readout();
-  if(loop_counter>=5){    //This readout is only taken every 5 loops
+/*
+  if (loop_counter >= 5) { //This readout is only taken every 5 loops
     ultrasonic_readout();
-    if(distance<15){
+    if (distance < 15) {
+      back(v1);
+      delay(10);
       stop_motors();
-      while(true){
-        
+      turn_left(v1 + 10, v2);
+      delay(700);
+      straight(v1);
+      delay(1000);
+      turn_right(v2, v1 + 10);
+      delay(600);
+      straight(v1);
+      delay(1000);
+      ir_readout();
+      while (ir_val_right > 300) {
+        straight(v1);
+        delay(50);
+        ir_readout();
+        Serial.println(ir_val_right);
       }
+      turn_right(v2, v1 + 10);
+      delay(600);
+      readout();
+      while(il_LDR>il_treshold){
+        straight(v1);
+        delay(50);
+        readout();
+        }
+      turn_left(v1 + 10, v2);
+      delay(700);
+      loop_counter = 0;
     }
-    loop_counter=0;
   }
+*/
   if ((middle_LDR < m_treshold) && ((ol_LDR > ol_treshold && il_LDR > il_treshold && ir_LDR > ir_treshold && or_LDR > or_treshold) || (ol_LDR > ol_treshold && or_LDR > or_treshold))) {     //if statement for all straight cases
     straight(v1 - 10);
     Serial.println("straight");

@@ -55,7 +55,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   ir_readout();
-  //show_data();
+ // show_data();
   follow_line();
   green();
 }
