@@ -9,8 +9,7 @@
 
 int v1 = 143;
 int v2 = 110;
-void straight(int m_Speed)
-{
+void straight(int m_Speed){
   digitalWrite(M1FWD, HIGH);
   digitalWrite(M1BWD, LOW);
   digitalWrite(M2FWD, HIGH);
@@ -49,6 +48,7 @@ void turn_right(int m_Speed_right, int m_Speed_left) {
   analogWrite(EN_M2, m_Speed_left);
   delay(1);
 }
+
 void back(int m_Speed) {
   digitalWrite(M1FWD, LOW);
   digitalWrite(M1BWD, HIGH);
@@ -58,6 +58,7 @@ void back(int m_Speed) {
   analogWrite(EN_M2, m_Speed);
   delay(1);
 }
+
 void ausweichen(){
   digitalWrite(M1FWD, HIGH);
   digitalWrite(M1BWD, LOW);

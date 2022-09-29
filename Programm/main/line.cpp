@@ -105,8 +105,8 @@ void follow_line() {
       turn_left(v1 + 5, v1 + 22);
       readout();
     }
-
   }
+  
   if (ol_LDR > ol_treshold && il_LDR > il_treshold && middle_LDR < m_treshold && ir_LDR < ir_treshold && or_LDR < or_treshold) {  //90° turn to the right
     straight(v1);
     delay(120);
@@ -134,7 +134,6 @@ void follow_line() {
       readout();
       delay(100);
     }
-
   }
 
   if (gyro == 0) {        //Rampe
